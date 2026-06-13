@@ -1,12 +1,49 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto Diccionario - Página Básica</title>
-  </head>
-  <body>
-    <h1>Proyecto Diccionario</h1>
-    <p>Esta es una página HTML muy básica añadida al repositorio.</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor Lengua Materna</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Traductor Lengua Materna</h1>
+            <p>Traduce palabras del español a tu lengua materna</p>
+        </header>
+        
+        <main>
+            <section id="search-section" class="search-section">
+                <form id="search-form" class="search-form">
+                    <div class="input-group">
+                        <label for="word-input" class="sr-only">Palabra en español</label>
+                        <input 
+                            type="text" 
+                            id="word-input" 
+                            name="word" 
+                            placeholder="Escribe una palabra en español..."
+                            autocomplete="off"
+                            required
+                        >
+                    </div>
+                    <button type="submit" id="search-button" class="search-button">
+                        <span class="button-icon">🔍</span>
+                        Buscar
+                    </button>
+                </form>
+            </section>
+            
+            <section id="results-section" class="results-section">
+                <!-- Los resultados se mostrarán aquí -->
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2024 Diccionario Lengua Materna</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
 </html>
