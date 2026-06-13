@@ -1,12 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto Diccionario - Página Básica</title>
-  </head>
-  <body>
-    <h1>Proyecto Diccionario</h1>
-    <p>Esta es una página HTML muy básica añadida al repositorio.</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario Traductor - Validación</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #1f2937;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .contenedor {
+            max-width: 700px;
+            margin: 60px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: #14532d;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .descripcion {
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 25px;
+        }
+
+        .formulario-busqueda {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 18px;
+            background-color: #16a34a;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #15803d;
+        }
+
+        .resultado {
+            background-color: #f0fdf4;
+            border-left: 5px solid #22c55e;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .mensaje-error {
+            background-color: #fff7ed;
+            border-left: 5px solid #f97316;
+            color: #9a3412;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .mensaje-error strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 600px) {
+            .formulario-busqueda {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contenedor">
+        <h1>Diccionario Traductor</h1>
+        <p class="descripcion">
+            Busca una palabra en español para consultar su traducción en lengua materna.
+        </p>
+
+        <section class="formulario-busqueda">
+            <input type="text" id="palabraInput" placeholder="Escribe una palabra, ejemplo: agua">
+            <button onclick="buscarPalabra()">Buscar</button>
+        </section>
+
+        <section id="resultado" class="resultado">
+            <strong>Resultado encontrado:</strong>
+            <p id="textoResultado"></p>
+        </section>
+
+        <section id="mensajeError" class="mensaje-error">
+            <strong>Palabra no encontrada</strong>
+            <p>
+                La palabra consultada no está registrada en el diccionario.
+                Intenta buscar otra palabra o verifica que esté escrita correctamente.
+            </p>
+        </section>
+    </main>
+
+    <script>
+        const diccionario = {
+            agua: "Yaku",
+            sol: "Inti",
+            luna: "Killa",
+            tierra: "Allpa"
+        };
+
+        function buscarPalabra() {
+            const palabraInput = document.getElementById("palabraInput");
+            const resultado = document.getElementById("resultado");
+            const textoResultado = document.getElementById("textoResultado");
+            const mensajeError = document.getElementById("mensajeError");
+
+            const palabra = palabraInput.value.trim().toLowerCase();
+
+            resultado.style.display = "none";
+            mensajeError.style.display = "none";
+
+            if (palabra === "" || !diccionario[palabra]) {
+                mensajeError.style.display = "block";
+                return;
+            }
+
+            textoResultado.textContent = `${palabra} significa ${diccionario[palabra]}`;
+            resultado.style.display = "block";
+        }
+    </script>
+
+</body>
 </html>
