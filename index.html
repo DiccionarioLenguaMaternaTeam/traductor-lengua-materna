@@ -1,12 +1,144 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto Diccionario - Página Básica</title>
-  </head>
-  <body>
-    <h1>Proyecto Diccionario</h1>
-    <p>Esta es una página HTML muy básica añadida al repositorio.</p>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario Traductor - Lengua Materna</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .contenedor-principal {
+            width: 100%;
+            max-width: 760px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .encabezado {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .encabezado h1 {
+            font-size: 30px;
+            color: #14532d;
+            margin-bottom: 10px;
+        }
+
+        .encabezado p {
+            font-size: 16px;
+            color: #4b5563;
+        }
+
+        .tarjeta-resultado {
+            border: 2px solid #bbf7d0;
+            background: #f0fdf4;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 20px;
+        }
+
+        .tarjeta-resultado h2 {
+            color: #166534;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .grupo-traduccion {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 14px;
+            border-left: 5px solid #22c55e;
+        }
+
+        .grupo-traduccion span {
+            display: block;
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .grupo-traduccion p {
+            font-size: 19px;
+            color: #111827;
+        }
+
+        .nota {
+            margin-top: 18px;
+            font-size: 14px;
+            color: #374151;
+            background: #ecfdf5;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .contenedor-principal {
+                padding: 22px;
+            }
+
+            .encabezado h1 {
+                font-size: 24px;
+            }
+
+            .grupo-traduccion p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="contenedor-principal">
+        <section class="encabezado">
+            <h1>Diccionario Traductor</h1>
+            <p>Consulta palabras en español y visualiza su traducción en lengua materna.</p>
+        </section>
+
+        <section class="tarjeta-resultado">
+            <h2>Resultado de traducción</h2>
+
+            <div class="grupo-traduccion">
+                <span>Palabra consultada</span>
+                <p>Agua</p>
+            </div>
+
+            <div class="grupo-traduccion">
+                <span>Traducción en español</span>
+                <p>Agua</p>
+            </div>
+
+            <div class="grupo-traduccion">
+                <span>Traducción en lengua materna</span>
+                <p>Yaku</p>
+            </div>
+
+            <p class="nota">
+                La tarjeta permite visualizar de forma clara la palabra consultada y su traducción.
+            </p>
+        </section>
+    </main>
+
+</body>
 </html>
