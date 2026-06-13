@@ -1,12 +1,27 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto Diccionario - Página Básica</title>
-  </head>
-  <body>
-    <h1>Proyecto Diccionario</h1>
-    <p>Esta es una página HTML muy básica añadida al repositorio.</p>
-  </body>
-</html>
+<section class="contenedor formulario-busqueda">
+    <h2>Buscar palabra</h2>
+
+    <p>
+        Escribe una palabra en español para consultar su traducción en lengua materna.
+    </p>
+
+    <form id="formularioBusqueda">
+        <label for="palabraInput">Palabra en español:</label>
+
+        <input 
+            type="text" 
+            id="palabraInput" 
+            name="palabra" 
+            placeholder="Ejemplo: agua, casa, sol" 
+            required
+        >
+
+        <button type="submit" id="btnBuscar">
+            Buscar traducción
+        </button>
+    </form>
+
+    <div id="resultadoTraduccion">
+        <!-- Aquí se mostrará la traducción más adelante con JavaScript -->
+    </div>
+</section>
