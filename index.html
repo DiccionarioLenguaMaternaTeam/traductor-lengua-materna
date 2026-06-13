@@ -3,7 +3,28 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proyecto Diccionario - Página Básica</title>
+    <title>Diccionario Español - Lengua Materna</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Diccionario Español - Lengua Materna</h1>
+
+      <!-- Interfaz de búsqueda: input + botón -->
+      <div class="fila">
+        <label for="palabra" class="sr-only">Palabra en español</label>
+        <input id="palabra" type="text" placeholder="Escribe una palabra en español (ej. casa)" aria-label="Palabra en español">
+        <button id="btnBuscar">Buscar</button>
+      </div>
+
+      <!-- Área donde se mostrarán los resultados -->
+      <div id="resultado" aria-live="polite"></div>
+    </main>
+
+    <!-- Conectar script externo -->
+    <script src="script.js"></script>
+  </body>
+</html>
   </head>
   <body>
     <h1>Proyecto Diccionario</h1>
